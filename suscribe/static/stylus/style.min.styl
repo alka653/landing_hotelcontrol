@@ -1,0 +1,99 @@
+sun = #f1c40f
+esmerald = #2ecc71
+cloud = #ecf0f1
+
+box-shadow(args)
+	-webkit-box-shadow args
+	-moz-box-shadow args
+	box-shadow args
+
+border-radius(args)
+	-webkit-border-radius args
+	-moz-border-radius args
+	border-radius args
+
+transition(args)
+	-webkit-transition args
+	-moz-transition args
+	transition args
+
+*
+	font-family 'Roboto', sans-serif
+	font-weight 300
+
+body
+	background url('../img/background.jpg')
+	background-size cover
+
+.navbar-no-bg
+	background none
+	border 0
+
+h1
+	font-size 38px
+	font-weight 100
+	line-height 50px
+
+h3
+	font-weight 300
+
+strong
+	font-weight 500
+
+p
+	font-size 18px
+
+.form-title
+	background white
+	color black
+	padding 15px
+
+.form-box
+	color black
+	padding 25px 25px 30px 25px
+	background cloud
+
+.content
+	padding 120px 0 170px 0
+	color #fff
+
+.text
+	padding-top 70px
+
+.text-foot
+	padding-top 15px
+	font-size 15px
+	font-weight 100
+
+.sun-light
+	color sun
+
+.green-light
+	color esmerald
+
+.light
+	color cloud
+
+form
+	padding-top 10px
+
+.btn
+	padding 10px
+	color white
+	background esmerald
+
+.form-control
+	height: 50px;
+	margin: 0;
+	padding: 0 20px;
+	vertical-align: middle;
+	background: #f8f8f8;
+	border: 1px solid #ddd;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 50px;
+	color: #888;
+	border-radius(4px)
+	box-shadow(0 1px 0 0 #fff)
+	transition(all .3s)
