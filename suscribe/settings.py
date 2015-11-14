@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	'apps.suscribers',
+	'suscribe.apps.suscribers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,7 +104,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'suscribe/static')
 
-MEDIA_URL ='/image/'
+MEDIA_URL ='/img/'
 
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, 'suscribe/static'),
