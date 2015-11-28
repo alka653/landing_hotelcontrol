@@ -1,5 +1,8 @@
 sun = #f1c40f
 esmerald = #2ecc71
+esmerald_black = #27ae60
+blue = #3498db
+purple = #9b59b6
 cloud = #ecf0f1
 
 box-shadow(args)
@@ -21,13 +24,24 @@ transition(args)
 	font-family 'Roboto', sans-serif
 	font-weight 300
 
-body
-	background url('../img/background.jpg')
-	background-size cover
-
 .navbar-no-bg
 	background none
 	border 0
+	transition 0.1s
+
+.navbar-white
+	background white
+	border 0
+	transition 0.1s
+	box-shadow(0px 6px 15px -8px rgba(0,0,0,0.75))
+	h1
+		color #000
+
+.navbar-right
+	padding 15px
+
+.none
+	display none
 
 h1
 	font-size 38px
@@ -41,7 +55,8 @@ strong
 	font-weight 500
 
 p
-	font-size 18px
+	font-weight 300
+	font-size 16px
 
 .form-title
 	background white
@@ -54,8 +69,15 @@ p
 	background cloud
 
 .content
-	padding 120px 0 170px 0
+	background url('../img/background.jpg')
+	background-size cover
+	padding 150px 0 100px 0
 	color #fff
+
+.box-white
+	background #fff
+	color #000
+	padding 20px
 
 .text
 	padding-top 70px
@@ -68,8 +90,14 @@ p
 .sun-light
 	color sun
 
+.blue-light
+	color blue
+
 .green-light
 	color esmerald
+
+.purple-light
+	color purple
 
 .light
 	color cloud
@@ -81,6 +109,18 @@ form
 	padding 10px
 	color white
 	background esmerald
+	transition 0.1s
+	&:hover
+	&:active
+	&:focus
+		color white
+		transition 0.1s
+		box-shadow(0px 6px 15px -8px rgba(0,0,0,0.75))
+
+.logo-upc
+	width 90px
+	height auto
+	margin-top 20px
 
 .form-control
 	height: 50px;
@@ -97,3 +137,12 @@ form
 	border-radius(4px)
 	box-shadow(0 1px 0 0 #fff)
 	transition(all .3s)
+
+.icon
+	font-size 60px
+	color esmerald_black
+
+footer
+	background esmerald_black
+	color cloud
+	padding 20px 0px 10px

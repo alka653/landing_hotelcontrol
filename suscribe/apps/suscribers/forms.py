@@ -9,5 +9,6 @@ class SuscriberForm(forms.ModelForm):
 		widgets = {
 			'name': TextInput(attrs = {'class': 'form-control', 'placeholder': 'Nombre Completo'}),
 			'email': EmailInput(attrs = {'class': 'form-control', 'placeholder': 'Correo Electronico'}),
+			'hotel': EmailInput(attrs = {'class': 'form-control', 'placeholder': 'Nombre del Hotel'}),
 		}
 		exclude = ('date',)

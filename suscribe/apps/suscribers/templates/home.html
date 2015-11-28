@@ -1,0 +1,115 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HotelControl</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+		<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+		<script>
+			$(document).ready(function (){
+				var nav = $('.navbar');
+				var $w = $(window);
+				$w.scroll(function(){
+					var scrollTop = $w.scrollTop();
+					if (scrollTop >= 100){
+						$('button.btn').removeClass('none');
+						nav.addClass('navbar-white');
+						nav.removeClass('navbar-no-bg');
+					}else{
+						$('button.btn').addClass('none');
+						nav.addClass('navbar-no-bg');
+						nav.removeClass('navbar-white');
+					}
+				});
+				$("button.btn").click(function() {
+					$('html, body').animate({
+						scrollTop: $(".form-request").offset().top
+					}, 1000);
+					$("#id_name").focus();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-no-bg navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<h1 class="light"><strong class="green-light">Eco</strong>Control</h1>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><button class="btn none">Solicita asesoria gratuita</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="content form-request">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="form-title">
+							<h3>Inscríbete y recibe asesoría gratuita</h3>
+						</div>
+						<div class="form-box text-center">
+							{% for message in messages %}
+								<div class="text-{{ message.tags }}">{{ message }}</div>
+							{% endfor %}
+							<form action="{% url 'home' %}" method="post">
+								{% csrf_token %}
+								{% for form in form %}
+									<div class="form-group">
+										{{ form }}
+									</div>
+								{% endfor %}
+								<input type="submit" value="Solicita Material Gratuito" class="btn" />
+							</form>
+						</div>
+					</div>
+					<div class="col-sm-6 text text-center">
+						<h1>Realiza el control del consumo de <strong>energía y agua</strong></h1>
+						<p class="light">Logra cumplir con la norma NTS-TS002 de sostenibilidad en tu Hotel</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-white">
+			<div class="container text-center">
+				<div class="row">
+					<div class="page-header">
+						<h1>Obtén más control del consumo de energía y agua en el Hotel</h1>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 40px;">
+					<div class="col-md-4">
+						<span class="glyphicon glyphicon-map-marker icon"></span>
+						<h3>En cualquier área</h3>
+						<p>Puedes monitoriar el consumo en cualquier área del Hotel.</p>
+					</div>
+					<div class="col-md-4">
+						<span class="glyphicon glyphicon-stats icon"></span>
+						<h3>Estadísticas en tiempo real</h3>
+						<p>Visualiza en el momento que quieras, el consumo en vivo y en directo del servicio público de diferentes áreas del Hotel.</p>
+					</div>
+					<div class="col-md-4">
+						<span class="glyphicon glyphicon-warning-sign icon"></span>
+						<h3>Alertas de consumo alto</h3>
+						<p>Te avisa cuando una área del Hotel se encuentre en consumo alto tolerado.</p>
+					</div>
+				</div>
+				<div class="row text-center" style="margin-top: 50px; margin-bottom: 30px;">
+					<button class="btn">Solicita asesoria gratuita</button>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container text-center">
+				<p>Apoyado por la Universidad Piloto de Colombia, Seccional Alto Magdalena</p>
+			</div>
+		</footer>
+	</body>
+</html>
