@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '70hd56+ui_x_x_c%f6tyoo)!g0t9a@(#6$h7!b_r=j%sz!0i3-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*',]
 
@@ -90,7 +90,7 @@ DATABASES = {
 		'NAME': 'df7p9brrmj3h6k',
 		'USER': 'anxelwytiebokq',
 		'PASSWORD': 'zQLHGuvxvnXn2O30fZx9g3vwTW',
-		'HOST': 'ec2-54-83-204-228.compute-1.amazonaws.com',
+		'HOST': 'localhost',
 		'PORT': '',
 	}
 }
