@@ -90,8 +90,8 @@ DATABASES = {
 		'NAME': 'df7p9brrmj3h6k',
 		'USER': 'anxelwytiebokq',
 		'PASSWORD': 'zQLHGuvxvnXn2O30fZx9g3vwTW',
-		'HOST': 'localhost',
-		'PORT': '',
+		'HOST': 'ec2-54-83-204-228.compute-1.amazonaws.com',
+		'PORT': '5432',
 	}
 }
 
