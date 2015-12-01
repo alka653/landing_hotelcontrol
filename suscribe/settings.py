@@ -30,6 +30,12 @@ ALLOWED_HOSTS = ['*',]
 
 # Application definition
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "sistematizaref.programador4@gmail.com"
+EMAIL_HOST_PASSWORD = 'stzEF0987'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.auth',
@@ -83,7 +89,8 @@ DATABASES = {
 	}
 }
 """
-
+# Configuration in Heroku
+"""
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -92,6 +99,19 @@ DATABASES = {
 		'PASSWORD': 'zQLHGuvxvnXn2O30fZx9g3vwTW',
 		'HOST': 'ec2-54-83-204-228.compute-1.amazonaws.com',
 		'PORT': '5432',
+	}
+}
+"""
+#Configuration in Local
+
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		'NAME': 'hotel_control',
+		'USER': 'postgres',
+		'PASSWORD': 'postgres',
+		'HOST': 'localhost',
+		'PORT': '',
 	}
 }
 
