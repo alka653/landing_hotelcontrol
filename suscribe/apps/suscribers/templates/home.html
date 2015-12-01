@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>HotelControl</title>
+		<title>Control</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -39,7 +39,7 @@
 		<nav class="navbar navbar-inverse navbar-no-bg navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<h1 class="light"><strong class="green-light">Eco</strong>Control</h1>
+					<h1 class="light"><strong class="green-light">Control</strong></h1>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -61,7 +61,7 @@
 						</div>
 						<div class="form-box text-center">
 							{% for message in messages %}
-								<div class="text-{{ message.tags }}">{{ message }}</div>
+								<div class="text-{{ message.tags }}"><h3>{{ message }}</h3></div>
 							{% endfor %}
 							<form action="{% url 'home' %}" method="post">
 								{% csrf_token %}
